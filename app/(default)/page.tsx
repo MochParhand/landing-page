@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Home - Simple",
+  title: "Magasu - Digital",
   description: "Page description",
 };
 
