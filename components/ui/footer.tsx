@@ -1,13 +1,19 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import Logo from "./logo";
 
 export default function Footer({ border = false }: { border?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
+
+    // Scroll dengan requestAnimationFrame supaya render selesai dulu
+    window.requestAnimationFrame(() => {
+      const el = document.getElementById(`faq-header-${index}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   };
 
   const faqs = [
@@ -60,8 +66,11 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
+                    id={`faq-header-${index}`}
                     onClick={() => toggle(index)}
                     className="w-full flex justify-between items-center p-4 text-left text-gray-800 font-medium hover:bg-gray-50 transition"
+                    aria-expanded={openIndex === index}
+                    aria-controls={`faq-answer-${index}`}
                   >
                     <span>{faq.question}</span>
                     <svg
@@ -72,6 +81,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                       stroke="currentColor"
                       strokeWidth={2}
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -81,7 +91,11 @@ export default function Footer({ border = false }: { border?: boolean }) {
                     </svg>
                   </button>
                   {openIndex === index && (
-                    <div className="px-4 pb-4 text-sm text-gray-600">
+                    <div
+                      id={`faq-answer-${index}`}
+                      className="px-4 pb-4 text-sm text-gray-600"
+                      style={{ willChange: "max-height, opacity" }}
+                    >
                       {faq.answer}
                     </div>
                   )}
@@ -93,10 +107,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
       </div>
 
       {/* Background Text and Glow */}
-      <div
-        className="relative -mt-16 h-60 w-full"
-        aria-hidden="true"
-      >
+      <div className="relative -mt-16 h-60 w-full" aria-hidden="true">
         <div className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 text-center text-[348px] font-bold leading-none before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['FAQ'] after:absolute after:inset-0 after:bg-gray-300/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['FAQ'] after:[text-shadow:0_1px_0_white]"></div>
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
@@ -106,7 +117,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
         </div>
       </div>
       <div className="py-6 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} <span className="font-medium text-gray-700">magasu.id</span>. All rights reserved.
+        &copy; {new Date().getFullYear()}{" "}
+        <span className="font-medium text-gray-700">magasu.id</span>. All rights
+        reserved.
       </div>
     </footer>
   );

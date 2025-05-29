@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Pengantin01 from "@/public/images/pengantin.jpeg";
-import Logo02 from "@/public/images/Pengantin02.png";
-import Logo03 from "@/public/images/pengantin03.png";
-import Logo04 from "@/public/images/pengantin04.png";
-import Logo05 from "@/public/images/pengantin05.png";
-import Logo06 from "@/public/images/pengantin06.png";
-import Logo07 from "@/public/images/pengantin07.png";
-import Logo08 from "@/public/images/pengantin08.png";
-import Logo09 from "@/public/images/pengantin09.png";
+import Pengantin01 from "@/public/images/pengantin.webp";
+import Logo02 from "@/public/images/Pengantin02.webp";
+import Logo03 from "@/public/images/pengantin03.webp";
+import Logo04 from "@/public/images/pengantin04.webp";
+import Logo05 from "@/public/images/pengantin05.webp";
+import Logo06 from "@/public/images/pengantin06.webp";
+import Logo07 from "@/public/images/pengantin07.webp";
+import Logo08 from "@/public/images/pengantin08.webp";
+import Logo09 from "@/public/images/pengantin09.webp";
 
 export default function BusinessCategories() {
   return (

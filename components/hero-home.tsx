@@ -1,11 +1,11 @@
 import Image from "next/image";
 import PageIllustration from "@/components/page-illustration";
-import Avatar01 from "@/public/images/pengantin05.png";
-import Avatar02 from "@/public/images/pengantin03.png";
-import Avatar03 from "@/public/images/pengantin07.png";
-import Avatar04 from "@/public/images/pengantin08.png";
-import Avatar05 from "@/public/images/pengantin09.png";
-import Avatar06 from "@/public/images/Pengantin02.png";
+import Avatar01 from "@/public/images/pengantin05.webp";
+import Avatar02 from "@/public/images/pengantin03.webp";
+import Avatar03 from "@/public/images/pengantin07.webp";
+import Avatar04 from "@/public/images/pengantin08.webp";
+import Avatar05 from "@/public/images/pengantin09.webp";
+import Avatar06 from "@/public/images/Pengantin02.webp";
 
 export default function HeroHome() {
   return (
@@ -70,7 +70,7 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Buat Momen Bahagiamu Lebih<br className="max-lg:hidden" />
+              Buat Momen Bahagiamu Lebih <br className="max-lg:hidden" />
               Berkesan ✨
             </h1>
             </div>

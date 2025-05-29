@@ -205,3 +205,6 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+html {
+  scroll-behavior: smooth;
+}

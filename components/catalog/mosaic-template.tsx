@@ -1,6 +1,6 @@
-import React from 'react';
-import Card from './card';
-import { cardsData } from './data';
+import React from "react";
+import Card from "./card";
+import { cardsData } from "./data";
 
 const MosaicTemplate = () => {
   return (
@@ -13,6 +13,7 @@ const MosaicTemplate = () => {
           badges={card.badges}
           liveDemoUrl={card.liveDemoUrl}
           buyUrl={card.buyUrl}
+          price={card.price}
           images={card.images}
         />
       ))}
