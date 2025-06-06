@@ -18,14 +18,14 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
   const faqs = [
     {
-      question: "1. Apa itu undangan digital?",
+      question: "1. Bagaimana Mengelola Komentar dan Kehadiran?",
       answer:
-        "Undangan digital adalah bentuk undangan yang dikirim secara online melalui link atau media sosial, tanpa menggunakan undangan fisik.",
+        "Kamu bisa mengelola komentar dan kehadiran tamu melalui spreadsheet yang terintegrasi. Setiap tamu yang mengisi undangan akan otomatis tercatat di spreadsheet tersebut. kamu bisa menghapus atau mengedit komentar tamu dengan mudah, dan melihat siapa saja yang sudah mengonfirmasi kehadiran.",
     },
     {
       question: "2. Bagaimana cara membagikan undangan?",
       answer:
-        "Kamu cukup menyalin link undangan dan membagikannya melalui WhatsApp, Instagram, email, atau media sosial lainnya.",
+        "Kamu cukup share atau menyalin link undangan melalui WhatsApp, Instagram, email, atau media sosial lainnya.",
     },
     {
       question: "3. Apakah undangan ini bisa diakses di semua perangkat?",
@@ -118,7 +118,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
       </div>
       <div className="py-6 text-center text-sm text-gray-500">
         &copy; {new Date().getFullYear()}{" "}
-        <span className="font-medium text-gray-700">magasu.id</span>. All rights
+        <span className="font-medium text-gray-700">K-WIN</span>. All rights
         reserved.
       </div>
     </footer>

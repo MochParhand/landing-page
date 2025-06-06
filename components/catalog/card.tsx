@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
-import Stripes from "@/public/images/magasu.webp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -32,7 +30,7 @@ const Card: React.FC<CardProps> = ({
     const handleLoad = () => {
       setTimeout(() => {
         AOS.refresh();
-      }, 200); // delay supaya animasi lebih mulus
+      }, 200);
     };
 
     if (document.readyState === "complete") {
@@ -66,9 +64,9 @@ const Card: React.FC<CardProps> = ({
         className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 transform"
         aria-hidden="true"
       >
-        <Image
+        <img
           className="max-w-none"
-          src={Stripes}
+          src="/images/magasu.webp"
           width={768}
           height={432}
           alt="Stripes"
@@ -79,7 +77,6 @@ const Card: React.FC<CardProps> = ({
       <div className="bg-[#f8f9fb] w-full max-w-6xl mx-auto rounded-2xl overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch p-6 lg:p-10 gap-6">
         {/* Left Content */}
         <div className="w-full lg:w-1/3 text-center lg:text-left flex flex-col justify-center items-center lg:items-start">
-          {/* Title + Price */}
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-between w-full gap-2 text-center lg:text-left">
             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-1">
               {title}
@@ -92,10 +89,8 @@ const Card: React.FC<CardProps> = ({
             </div>
           </div>
 
-          {/* Description */}
           <p className="text-gray-500 text-base mt-2">{description}</p>
 
-          {/* Badges */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-2 mt-4">
             {badges.map((stack) => (
               <img
@@ -109,7 +104,6 @@ const Card: React.FC<CardProps> = ({
             ))}
           </div>
 
-          {/* Buttons */}
           <div className="flex justify-center lg:justify-start gap-4 mt-6 flex-wrap items-center">
             <a
               href={liveDemoUrl}
@@ -117,7 +111,7 @@ const Card: React.FC<CardProps> = ({
               rel="noopener noreferrer"
               className="px-4 py-2 bg-white text-gray-800 rounded-md text-sm shadow"
             >
-              Preview →
+              Preview
             </a>
             <a
               href={buyUrl}
@@ -125,7 +119,7 @@ const Card: React.FC<CardProps> = ({
               rel="noopener noreferrer"
               className="px-4 py-2 bg-gray-900 text-white rounded-md text-sm shadow hover:bg-gray-800"
             >
-              Beli Sekarang →
+              Pesan Sekarang
             </a>
           </div>
         </div>
@@ -135,16 +129,15 @@ const Card: React.FC<CardProps> = ({
           {images.map(({ src, alt, hiddenOnSmall }) => (
             <div
               key={src}
-              className={`relative w-[300px] sm:w-[332px] h-[250px] lg:h-full overflow-hidden rounded-xl shadow-lg ${
+              className={`relative w-[300px] sm:w-[332px] aspect-[4/3] overflow-hidden rounded-xl shadow-lg ${
                 hiddenOnSmall ? "hidden sm:block" : ""
               }`}
             >
-              <Image
+              <img
                 src={src}
                 alt={alt}
-                fill
-                style={{ objectFit: "cover" }}
-                priority={false}
+                className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           ))}

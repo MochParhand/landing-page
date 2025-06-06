@@ -1,11 +1,4 @@
-import Image from "next/image";
 import PageIllustration from "@/components/page-illustration";
-import Avatar01 from "@/public/images/pengantin05.webp";
-import Avatar02 from "@/public/images/pengantin03.webp";
-import Avatar03 from "@/public/images/pengantin07.webp";
-import Avatar04 from "@/public/images/pengantin08.webp";
-import Avatar05 from "@/public/images/pengantin09.webp";
-import Avatar06 from "@/public/images/Pengantin02.webp";
 
 export default function HeroHome() {
   return (
@@ -21,47 +14,47 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
             >
               <div className="-mx-0.5 flex justify-center -space-x-3">
-                <Image
+                <img
                   className="box-content rounded-full border-2 border-gray-50"
-                  src={Avatar01}
+                  src="/images/pengantin05.webp"
                   width={32}
                   height={32}
                   alt="Avatar 01"
                 />
-                <Image
+                <img
                   className="box-content rounded-full border-2 border-gray-50"
-                  src={Avatar02}
-                  width={32}
-                  height={32}
-                  alt="Avatar 01"
-                />
-                <Image
-                  className="box-content rounded-full border-2 border-gray-50"
-                  src={Avatar03}
+                  src="/images/pengantin03.webp"
                   width={32}
                   height={32}
                   alt="Avatar 02"
                 />
-                <Image
+                <img
                   className="box-content rounded-full border-2 border-gray-50"
-                  src={Avatar04}
+                  src="/images/pengantin07.webp"
                   width={32}
                   height={32}
                   alt="Avatar 03"
                 />
-                <Image
+                <img
                   className="box-content rounded-full border-2 border-gray-50"
-                  src={Avatar05}
+                  src="/images/pengantin08.webp"
                   width={32}
                   height={32}
                   alt="Avatar 04"
                 />
-                <Image
+                <img
                   className="box-content rounded-full border-2 border-gray-50"
-                  src={Avatar06}
+                  src="/images/pengantin09.webp"
                   width={32}
                   height={32}
                   alt="Avatar 05"
+                />
+                <img
+                  className="box-content rounded-full border-2 border-gray-50"
+                  src="/images/Pengantin02.webp"
+                  width={32}
+                  height={32}
+                  alt="Avatar 06"
                 />
               </div>
             </div>
@@ -73,8 +66,8 @@ export default function HeroHome() {
               Buat Momen Bahagiamu Lebih <br className="max-lg:hidden" />
               Berkesan ✨
             </h1>
-            </div>
           </div>
+        </div>
       </div>
     </section>
   );

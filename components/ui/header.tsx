@@ -24,7 +24,7 @@ export default function Header() {
           {/* Tombol WhatsApp */}
           <div className="flex flex-1 justify-end">
             <Link
-              href="https://wa.me/6282119819536?text=I'm%20interested%20in%20your%20car%20for%20sale"
+              href="https://wa.me/6285720710326?text=Halo%20Min%2C%20saya%20berencana%20membuat%20undangan%20digital%20untuk%20acara%20saya.%20Boleh%20dibantu%20untuk%20desain%20dan%20pembuatannya%3F"
               className="btn-sm bg-gray-800 text-white hover:bg-gray-900 flex items-center gap-2 px-4 py-2 rounded-lg text-sm shadow"
             >
               <FaWhatsapp className="text-green-500" />

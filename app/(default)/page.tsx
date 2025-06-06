@@ -1,7 +1,7 @@
 // app/page.tsx
 
 export const metadata = {
-  title: "Magasu - Digital",
+  title: "K-win Invitation",
   description: "Page description",
 };
 
